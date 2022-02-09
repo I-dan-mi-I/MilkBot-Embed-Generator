@@ -173,9 +173,9 @@ $(document).ready(function () {
 
       // add field
       if (switches.useVars) {
-        source += '<field>\n <title>' + field.name + '</title>\n <text>' + field.value.replace('<', '&lt').replace('>', '&gt') + '</text>\n <inline>' + (field.inline && 'True' || 'False') + '<</inline>\n</field>\n';
+        source += '<field>\n <title>' + field.name + '</title>\n <text>' + field.value.replace('<', '&lt;').replace('>', '&gt;') + '</text>\n <inline>' + (field.inline && 'True' || 'False') + '<</inline>\n</field>\n';
       } else {
-        source += '<field>\n <title>' + field.name + '</title>\n <text>' + field.value.replace('<', '&lt').replace('>', '&gt') + '</text>\n <inline>' + (field.inline && 'True' || 'False') + '</inline>\n</field>\n';
+        source += '<field>\n <title>' + field.name + '</title>\n <text>' + field.value.replace('<', '&lt;').replace('>', '&gt;') + '</text>\n <inline>' + (field.inline && 'True' || 'False') + '</inline>\n</field>\n';
       }
     }
 
