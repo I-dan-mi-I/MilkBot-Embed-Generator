@@ -168,14 +168,15 @@ $(document).ready(function () {
       }
 
       var field = _ref;
+	  
 
       $('.embed-inner .fields').append('\n        <div class="field ' + (field.inline && 'inline') + '">\n          <div class="field-name">' + field.name + '</div>\n          <div class="field-value">' + converter.makeHtml(field.value) + '</div>\n        </div>\n      ');
 
       // add field
       if (switches.useVars) {
-        source += '<field>\n <title>' + field.name + '</title>\n <text>' + field.value.replace('<', '&lt;').replace('>', '&gt;') + '</text>\n <inline>' + (field.inline && 'True' || 'False') + '<</inline>\n</field>\n';
+        source += '<field>\n <title>' + field.name + '</title>\n <text>' + field.value + '</text>\n <inline>' + (field.inline && 'True' || 'False') + '<</inline>\n</field>\n';
       } else {
-        source += '<field>\n <title>' + field.name + '</title>\n <text>' + field.value.replace('<', '&lt;').replace('>', '&gt;') + '</text>\n <inline>' + (field.inline && 'True' || 'False') + '</inline>\n</field>\n';
+        source += '<field>\n <title>' + field.name + '</title>\n <text>' + field.value + '</text>\n <inline>' + (field.inline && 'True' || 'False') + '</inline>\n</field>\n';
       }
     }
 
@@ -189,9 +190,6 @@ $(document).ready(function () {
         source += 'embed.set_footer(text="' + embed.footer + '")\n';
       }
     }
-
-    // add send function
-    source += '';
 
     // code
     $('.source').text(source);
